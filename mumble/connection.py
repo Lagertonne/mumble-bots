@@ -19,7 +19,7 @@ class Connection(threading.Thread):
     self.server = server
     self.delegate = delegate
     self.nickname = nickname
-    self.password = password
+    self.password = server.password
     self.keep_going = True
     self.next_ping = None
     self.last_ping = None
@@ -29,7 +29,7 @@ class Connection(threading.Thread):
     threading.Thread.__init__(self)
     self.socket = self.server.connect()
     self.name = version
-    self.password = None
+    self.password = server.password
     self.start()
 
   def stop(self):

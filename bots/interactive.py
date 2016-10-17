@@ -38,8 +38,8 @@ class Context(object):
     print "Max Bandwidth: %d" % bandwidth
     print "Ping: %d msec" % ping
 
-  def connect(self, hostport, nickname):
-    server = mumble.Server(*hostport.split(':'))
+  def connect(self, hostport, nickname, password = None):
+    server = mumble.Server(*hostport.split(':'), password = password)
     print "Connecting to %s..." % server
     self.__bot.start(server, nickname)
 

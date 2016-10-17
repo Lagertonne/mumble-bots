@@ -11,9 +11,10 @@ LOGGER = logging.getLogger(__name__)
 # Keep a server's information in a nice tidy place.
 # This is hardly more than that.
 class Server(object):
-  def __init__(self, hostname = '', port = 64738):
+  def __init__(self, hostname = '', port = 64738, password = None):
     self.hostname = hostname
     self.port = int(port)
+    self.password = password
 
   def __str__(self):
     return "%s:%d" % (self.hostname, self.port)
